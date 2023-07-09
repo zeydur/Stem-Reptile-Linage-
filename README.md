@@ -34,7 +34,7 @@ The script used:
 ### 5. Evolution of Gene Families
 CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the ***** orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. 
 The command used:
-
+cafe5 -i Orthogroups.GeneCountf.csv -t newicktree.newick -o caferesults
 
 
 
