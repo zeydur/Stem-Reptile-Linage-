@@ -30,6 +30,7 @@ The intricate web of phylogenetic relationships was illuminated by the comprehen
 The main goals of usage of OrthoFinder (version) are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by DIAMOND (version) which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
 The script used:
 
+
 ### 5. Evolution of Gene Families
 CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the ***** orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. 
 The command used:
