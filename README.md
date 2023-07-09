@@ -20,6 +20,7 @@ The data used in this project was obtained through several sources including Nat
 
 ### 2. Investigation of Completeness as Quality Control for Genome Assemblies
 To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, --input was set as FASTA files from genome collection step, --lineage was set as vertebrata_odb10 and --mode was set as genome on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ‘vertebrata_odb10’ was employed and the dependencies were identified for the research as HMMsearch v3.1. and bbtools v39.01.
+
 The script used:
 
 
@@ -28,11 +29,13 @@ The intricate web of phylogenetic relationships was illuminated by the comprehen
 
 ### 4. Orthology and Gene Family Inference
 The main goals of usage of OrthoFinder (version) are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by DIAMOND (version) which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
+
 The script used:
 
 
 ### 5. Evolution of Gene Families
 CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the ***** orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. 
+
 The command used:
 cafe5 -i Orthogroups.GeneCountf.csv -t newicktree.newick -o caferesults
 
