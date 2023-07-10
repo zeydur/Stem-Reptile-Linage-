@@ -6,8 +6,7 @@ The aim of this M.Sc. Bioinformatics individual project is to conduct a genome-s
 The scripts were created in the Miniconda3 environment, requiring prior installation, and executed using Git Bash on the Augusta High Performance Computing (HPC) system.
 A separate environment was created for each tool, and the following example shows the command used for running each tool:
 
-``
-conda create --prefix /directory/ busco
+``conda create --prefix /directory/ busco
 
 conda activate /directory/busco
 
@@ -15,8 +14,8 @@ conda install -c bioconda busco
 
 or
 
-conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is required)
-``
+conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is required)``
+
 ## Methods
 
 ### 1. Genome Collection
