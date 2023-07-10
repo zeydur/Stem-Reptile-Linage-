@@ -29,9 +29,16 @@ To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was emp
 The script used:
 
 
+#### 2.1. Creating the graphs for interpretation of BUSCO summary
 Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
 For that purpose HPC-Tomoko which has already had R package was employed since some problems occured during installation of R package. The initial step was transferring whole short_summary.txt files to the Tomoko by using ``"scp -i ssh mbxzd1@10.156.32.52  /Users/zeynep/Downloads/Busco/short_summary.specific.vertebrata_odb10.OUTPUT_*  mbxzd1@10.156.32.52:/home/mbxzd1"`` command. This step is followed by making the specific directoy ``"mkdir busco_summaries"`` in the home directory and moving those files into that directory. 
-
+Then R package must be started and ggpot2 must be installed personal library by following those commands:
+``install.packages("ggplot2")`` 
+``q(save="no")``
+This step is followed by changing the working directory into the where BUSCO has been installed and then to bin (which contains the related Python command), the example command:
+``cd /home/mbxzd11/miniconda3/envs/busco/bin``
+To obtain the graps for BUSCO results, run script:
+``python3 generate_plot.py --working_directory /home/mbxzd1/busco_summaries``
 
 ### 3. Orthology and Gene Family Inference
 The main goals of usage of OrthoFinder (version) are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by DIAMOND (version) which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
