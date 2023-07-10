@@ -5,12 +5,15 @@ The aim of this M.Sc. Bioinformatics individual project is to conduct a genome-s
 ## Explanation of Environment and General Prequisites
 The scripts were created in the Miniconda3 environment, requiring prior installation, and executed using Git Bash on the Augusta High Performance Computing (HPC) system.
 A separate environment was created for each tool, and the following example shows the command used for running each tool:
-conda create --prefix /directort/ busco
+
+conda create --prefix /directory/ busco
 
 conda activate /directory/busco
 
-conda install -c bioconda bsuco
+conda install -c bioconda busco
+
 or
+
 conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is required)
 
 ## Methods
@@ -24,14 +27,17 @@ To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was emp
 The script used:
 
 
-### 3. Divergence Time Estimation
-The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, TimeTree facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using iTOL v.6 (Interactive Tree Of Life) software and FigTree v.1.4.4 software.
+Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
+For that purpose HPC-Tomoko which has already had R package was employed since some problems occured during installation of R package. The initial step was transferring whole short_summary.txt files to the Tomoko by using "scp -i ssh mbxzd1@10.156.32.52  /Users/zeynep/Downloads/Busco/short_summary.specific.vertebrata_odb10.OUTPUT_*  mbxzd1@10.156.32.52:/home/mbxzd1" command. This step is followed by making the specific directoy "mkdir busco_summaries" in the home directory and moving those files into that directory. 
 
-### 4. Orthology and Gene Family Inference
+
+### 3. Orthology and Gene Family Inference
 The main goals of usage of OrthoFinder (version) are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by DIAMOND (version) which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
 
 The script used:
 
+### 4. Divergence Time Estimation
+The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, TimeTree facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using iTOL v.6 (Interactive Tree Of Life) software and FigTree v.1.4.4 software.
 
 ### 5. Evolution of Gene Families
 CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the ***** orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. 
