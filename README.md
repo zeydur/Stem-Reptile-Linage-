@@ -6,7 +6,7 @@ The aim of this M.Sc. Bioinformatics individual project is to conduct a genome-s
 The scripts were created in the Miniconda3 environment, requiring prior installation, and executed using Git Bash on the Augusta High Performance Computing (HPC) system.
 A separate environment was created for each tool, and the following example shows the command used for running each tool:
 
-conda create --prefix /directory/ busco
+``conda create --prefix /directory/ busco
 
 conda activate /directory/busco
 
@@ -15,7 +15,7 @@ conda install -c bioconda busco
 or
 
 conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is required)
-
+``
 ## Methods
 
 ### 1. Genome Collection
@@ -28,7 +28,7 @@ The script used:
 
 
 Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
-For that purpose HPC-Tomoko which has already had R package was employed since some problems occured during installation of R package. The initial step was transferring whole short_summary.txt files to the Tomoko by using "scp -i ssh mbxzd1@10.156.32.52  /Users/zeynep/Downloads/Busco/short_summary.specific.vertebrata_odb10.OUTPUT_*  mbxzd1@10.156.32.52:/home/mbxzd1" command. This step is followed by making the specific directoy "mkdir busco_summaries" in the home directory and moving those files into that directory. 
+For that purpose HPC-Tomoko which has already had R package was employed since some problems occured during installation of R package. The initial step was transferring whole short_summary.txt files to the Tomoko by using ``"scp -i ssh mbxzd1@10.156.32.52  /Users/zeynep/Downloads/Busco/short_summary.specific.vertebrata_odb10.OUTPUT_*  mbxzd1@10.156.32.52:/home/mbxzd1"`` command. This step is followed by making the specific directoy ``"mkdir busco_summaries"`` in the home directory and moving those files into that directory. 
 
 
 ### 3. Orthology and Gene Family Inference
