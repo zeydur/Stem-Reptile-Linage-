@@ -23,6 +23,10 @@ conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is req
 ### 1. Genome Collection
 The data used in this project was obtained through several sources including National Center for Biotechnology Information (NCBI) – Genome (regarding to the latest releases - 2023), Ensembl – Biomart (Ensembl Release 109, 2023) and Iguana consortium. Genome coding sequences of reference genomes as in FASTA format files were downloaded from NCBI-Genome and only coding sequences were downloaded from Ensembl-Biomart, then the files were modified by addition of the common names to the headers. The Iguana genomes were directly derived from Iguana Consortium, and they have performed BRAKER v.2.1.6 for prediction of protein coding gene structures in cooperation with TSEBRA to predict the structures and generate the coding sequences, furthermore similar modifications were applied to those data files. In total 37 genomes from different classes were obtained (24 species from reptilia, 6 mammalia, 3 amphibia, 4 aves).
 
+* The example command for modification of FASTA files:
+
+``sed "s/^>/>Chinesesoftshellturtle_/" Softshellturt/ncbi_dataset/data/GCF_000230535.1/cds_from_genomic.fna > ChineseSoftshellTurtle.fa``
+
 ### 2. Investigation of Completeness as Quality Control for Genome Assemblies
 To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, ``--input`` was set as ``FASTA files`` from genome collection step, ``--lineage`` was set as ``vertebrata_odb10`` and ``--mode`` was set as ``genome`` on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ``‘vertebrata_odb10’`` was employed and the dependencies were identified for the research as HMMsearch v3.1. and bbtools v39.01.
 
@@ -76,13 +80,18 @@ CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notabl
 
 ``awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '\t' > mod.tsv``
 
-* Lastly to filter the Orthogroups.GeneCount.tsv file to remove OG that have more than 100 proteins in a particular species the script had run:
+* Lastly to filter the Orthogroups.GeneCount.tsv file to remove OG that have more than 100 proteins in a particular species the script (done by Fabio H. K. Mendes) had run:
+  
+[cafetutorial_clade_and_size_filter.py](cafetutorial_clade_and_size_filter.py)
+
+*The run comman for this python script:
+
+``python3 cafe.py -i mod.tsv -s -o cafe.input.tsv``
 
 
+* The example command:
 
-* The example command :
-
-``cafe5 -i Orthogroups.GeneCountf.csv -t newicktree.newick -o caferesults``
+``cafe5 -i cafe.input.tsv -t newicktree.newick -o caferesults``
 
 or it can be run as in Bash script (which has been used):
 
