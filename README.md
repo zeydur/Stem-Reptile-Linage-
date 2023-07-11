@@ -27,8 +27,8 @@ The data used in this project was obtained through several sources including Nat
 To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, ``--input`` was set as ``FASTA files`` from genome collection step, ``--lineage`` was set as ``vertebrata_odb10`` and ``--mode`` was set as ``genome`` on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ``‘vertebrata_odb10’`` was employed and the dependencies were identified for the research as HMMsearch v3.1. and bbtools v39.01.
 
 - The script used:
-  
-busco.sh
+
+[Link to Code File](busco.sh)
 
 #### 2.1. Creating the graphs for interpretation of BUSCO summary
 Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
