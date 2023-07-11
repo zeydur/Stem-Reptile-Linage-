@@ -84,7 +84,7 @@ CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notabl
   
 [cafetutorial_clade_and_size_filter.py](cafetutorial_clade_and_size_filter.py)
 
-*The run comman for this python script:
+* The run comman for this python script:
 
 ``python3 cafe.py -i mod.tsv -s -o cafe.input.tsv``
 
