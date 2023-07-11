@@ -60,7 +60,21 @@ The main goals of usage of OrthoFinder (version) are identification orthologs, o
 The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, TimeTree facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using iTOL v.6 (Interactive Tree Of Life) software and FigTree v.1.4.4 software.
 
 ### 5. Evolution of Gene Families
-CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the ***** orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. 
+CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the ***** orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. . In CAFE5, the default parameters for input and tree are designated as "--input" and "--tree," respectively. The input file, named Orthogroups.GeneCount.tsv, is generated through the use of OrthoFinder.  However, it is necessary to modify the Orthogroups.GeneCount.tsv file to be compatible with CAFE5. This modification involves converting the file to tab-separated format and removing the total gene count column before it can be processed by CAFE5. Furthermore, the tree in Newick format, is obtained directly from the preceding step of the methodology.
+
+#### 5.1. Preparing the files for CAFE5 analysis
+
+* The first step modifying the .tsv file to obtain the tab-separated format file:
+
+``awk -F'\t' '{print "(null)\t"$0}' Orthogroups.GeneCount.tsv > tmp.tsv``
+
+* Then the header of first column was (which was (null)) changed to Desc:
+
+``sed -i '1 s/(null)/Desc/' tmp.tsv``
+
+* Lastly the total column was excluded:
+
+``awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '\t' > mod.tsv``
 
 * The command used:
 
