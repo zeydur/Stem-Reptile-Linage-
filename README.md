@@ -28,7 +28,7 @@ To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was emp
 
 - The script used:
 
-[Link to Code File](busco.sh)
+[busco.sh](busco.sh)
 
 #### 2.1. Creating the graphs for interpretation of BUSCO summary
 Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
