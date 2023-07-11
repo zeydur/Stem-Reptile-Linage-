@@ -8,6 +8,6 @@
 #SBATCH --output=/gpfs01/home/mbxzd1/OandE/%x.out
 #SBATCH --error=/gpfs01/home/mbxzd1/OandE/%x.err
 
-# These steps are required to activate Conda
+# Run the command line directly in the direction of where your CAFE5 is installed
 
 cafe5 -i mod.tsv -t newicktree.newick -o cafresults2
