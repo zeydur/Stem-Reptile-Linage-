@@ -72,9 +72,13 @@ CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notabl
 
 ``sed -i '1 s/(null)/Desc/' tmp.tsv``
 
-* Lastly the total column was excluded:
+* After that the total column was excluded:
 
 ``awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '\t' > mod.tsv``
+
+* Lastly to filter the Orthogroups.GeneCount.tsv file to remove OG that have more than 100 proteins in a particular species the script had run:
+
+
 
 * The example command :
 
