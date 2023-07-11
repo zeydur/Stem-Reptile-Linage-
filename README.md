@@ -33,7 +33,7 @@ The script used:
 Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
 For that purpose HPC-Tomoko which has already had R package was employed since some problems occured during installation of R package. The initial step was transferring whole short_summary.txt files to the Tomoko by using ``"scp -i ssh mbxzd1@10.156.32.52  /Users/zeynep/Downloads/Busco/short_summary.specific.vertebrata_odb10.OUTPUT_*  mbxzd1@10.156.32.52:/home/mbxzd1"`` command. This step is followed by making the specific directoy ``"mkdir busco_summaries"`` in the home directory and moving those files into that directory. 
 
-Then R package must be started and ggpot2 must be installed personal library by following those commands:
+*Then R package must be started and ggpot2 must be installed personal library by following those commands:
 
 ``install.packages("ggplot2")`` 
 
