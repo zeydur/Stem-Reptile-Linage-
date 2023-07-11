@@ -66,6 +66,9 @@ CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notabl
 
 ``cafe5 -i Orthogroups.GeneCountf.csv -t newicktree.newick -o caferesults``
 
+or it can be run as in Bash script:
+
+[cafe.sh](cafe.sh)
 
 
 
