@@ -10,4 +10,4 @@
 
 # Run the command line directly in the direction of where your CAFE5 is installed
 
-cafe5 -i mod.tsv -t newicktree.newick -o cafresults2
+cafe5 -i cafe.input.tsv -t newicktree.newick -o caferesults
