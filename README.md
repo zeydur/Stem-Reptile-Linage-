@@ -76,11 +76,11 @@ CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notabl
 
 ``awk -F'\t' '{$NF=""; print $0}' tmp.tsv | rev | sed 's/^\s*//g' | rev | tr ' ' '\t' > mod.tsv``
 
-* The command used:
+* The example command :
 
 ``cafe5 -i Orthogroups.GeneCountf.csv -t newicktree.newick -o caferesults``
 
-or it can be run as in Bash script:
+or it can be run as in Bash script (which has been used):
 
 [cafe.sh](cafe.sh)
 
