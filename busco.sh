@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=LAB_exe
-#SBATCH --partition=hpc
+#SBATCH --job-name=Busco_results
+#SBATCH --partition=defq
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --mem=1g
-#SBATCH --time=05:00:00
-#SBATCH --output=/shared/home/sbzsmb/OandE/%x.out
-#SBATCH --error=/shared/home/sbzsmb/OandE/%x.err
+#SBATCH --ntasks-per-node=40
+#SBATCH --mem=179g
+#SBATCH --time=72:00:00
+#SBATCH --output=/shared/home/mbxzd1/OandE/%x.out
+#SBATCH --error=/shared/home/mbxzd1/OandE/%x.err
 
 # These steps are required to activate Conda
 source $HOME/.bash_profile
