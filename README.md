@@ -28,7 +28,7 @@ To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was emp
 
 - The script used:
 
-[busco.sh](busco.sh)
+``[busco.sh](busco.sh)``
 
 #### 2.1. Creating the graphs for interpretation of BUSCO summary
 Further details were presented using the generate_plot.py script, which utilizes the R package (https://www.r-project.org/) and ggplot2 (http://ggplot2.org/) to generate plots and enhance the visualization of the data. 
@@ -53,6 +53,8 @@ For that purpose HPC-Tomoko which has already had R package was employed since s
 The main goals of usage of OrthoFinder (version) are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by DIAMOND (version) which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
 
 * The script used:
+
+``[orthofinder.sh](orthofinder.sh)``
 
 ### 4. Divergence Time Estimation
 The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, TimeTree facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using iTOL v.6 (Interactive Tree Of Life) software and FigTree v.1.4.4 software.
