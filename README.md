@@ -115,13 +115,13 @@ or
 
 * The cafeplotter tool can be installed by following commands:
 
-``
+````
 pip install cafeplotter
 
 mkdir cafeplot 
 
 cafeplotter -i RESULTS_CAFE/ -o cafeplot/
-``
+````
 
 
 
