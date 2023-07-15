@@ -21,7 +21,7 @@ conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is req
 ## Methods
 
 ### 1. Genome Collection
-The data used in this project was obtained through several sources including National Center for Biotechnology Information (NCBI) – Genome (regarding to the latest releases - 2023), Ensembl – Biomart (Ensembl Release 109, 2023) and Iguana consortium. Genome coding sequences of reference genomes as in FASTA format files were downloaded from NCBI-Genome and only coding sequences were downloaded from Ensembl-Biomart, then the files were modified by addition of the common names to the headers. The Iguana genomes were directly derived from Iguana Consortium, and they have performed BRAKER v.2.1.6 for prediction of protein coding gene structures in cooperation with TSEBRA to predict the structures and generate the coding sequences, furthermore similar modifications were applied to those data files. In total 37 genomes from different classes were obtained (24 species from reptilia, 6 mammalia, 3 amphibia, 4 aves).
+The data used in this project was obtained through several sources including National Center for Biotechnology Information (NCBI) – Genome (regarding to the latest releases - 2023), Ensembl – Biomart (Ensembl Release 109, 2023) and Iguana consortium. Genome coding sequences of reference genomes as in FASTA format files were downloaded from NCBI-Genome and only coding sequences were downloaded from Ensembl-Biomart, then the files were modified by addition of the common names to the headers. The Iguana genomes were directly derived from Iguana Consortium, and they have performed BRAKER v.2.1.6 for prediction of protein coding gene structures in cooperation with TSEBRA (Gabriel, L., Hoff, K.J., Brůna, T. et al., 2021) to predict the structures and generate the coding sequences, furthermore similar modifications were applied to those data files. In total 37 genomes from different classes were obtained (24 species from reptilia, 6 mammalia, 3 amphibia, 4 aves).
 
 * The example command for modification of FASTA files:
 
@@ -100,6 +100,9 @@ CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notabl
 or it can be run as in Bash script (which has been used):
 
 [cafe.sh](cafe.sh)
+
+* To visualize the outcomes of the CAFE analysis following script had run:
+* 
 
 
 
