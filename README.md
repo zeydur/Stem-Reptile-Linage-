@@ -102,8 +102,26 @@ or it can be run as in Bash script (which has been used):
 [cafe.sh](cafe.sh)
 
 * To visualize the outcomes of the CAFE analysis following script had run:
-* 
 
+[cafe_draw_tree.py](cafe_draw_tree.py)
+
+Example run comman:
+
+Move your directory to the Results of CAFE5 initially and then run:
+
+``python3 cafe_draw_tree.py -i Base_clade_results.txt -d Base_results.txt -o clade_results.png``
+
+or 
+
+* The cafeplotter tool can be installed by following commands:
+
+``
+pip install cafeplotter
+
+mkdir cafeplot 
+
+cafeplotter -i RESULTS_CAFE/ -o cafeplot/
+``
 
 
 
