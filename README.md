@@ -101,6 +101,8 @@ or it can be run as in Bash script (which has been used):
 
 [cafe.sh](cafe.sh)
 
+#### 5.2. Visualization of the outcomes from CAFE5 analysis
+
 * To visualize the outcomes of the CAFE analysis following script had run:
 
 [cafe_draw_tree.py](cafe_draw_tree.py)
@@ -113,7 +115,7 @@ Move your directory to the Results of CAFE5 initially and then run:
 
 or 
 
-* The cafeplotter tool can be installed by following commands:
+* The cafeplotter tool can be installed, directory can be created and regarding to the directory of the CAFE5 results the plot can be obtained by following commands:
 
 ````
 pip install cafeplotter
