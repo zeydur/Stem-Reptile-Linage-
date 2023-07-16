@@ -125,5 +125,6 @@ mkdir cafeplot
 cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 ````
 
+* Then in the directory of cafeplot, ``summary_all_gene_family.png`` and ``summary_significant_gene_family.png`` can be found.
 
 
