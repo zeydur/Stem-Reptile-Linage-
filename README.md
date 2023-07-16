@@ -107,9 +107,9 @@ or it can be run as in Bash script (which has been used):
 
 [cafe_draw_tree.py](cafe_draw_tree.py)
 
-Example run comman:
+* Example run comman:
 
-Move your directory to the Results of CAFE5 initially and then run:
+* Move your directory to the Results of CAFE5 initially and then run:
 
 ``python3 cafe_draw_tree.py -i Base_clade_results.txt -d Base_results.txt -o clade_results.png``
 
