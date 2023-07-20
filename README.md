@@ -107,7 +107,7 @@ or it can be run as in Bash script (which has been used):
 
 [cafe_draw_tree.py](cafe_draw_tree.py)
 
-* Example run comman:
+* Example run command:
 
 * Move your directory to the Results of CAFE5 initially and then run:
 
