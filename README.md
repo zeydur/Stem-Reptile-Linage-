@@ -133,4 +133,7 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 * Then in the directory of cafeplot, ``summary_all_gene_family.png`` and ``summary_significant_gene_family.png`` can be found.
 
+### 6. Gene Ontology Analysis
+
+EggNOG Mapper v2.1.9 (Carlos P. Cantalapiedra et al., 2021) was employed to identify or classify the gene of interest in manner of their functions, locations and processes that are playing role. This analysis employs the significant gene families which were obtained from CAFÉ5 analysis, here we have focused on only eight gene families, by searching the significant expansions and contractions on the Reptilian branch by determining the relevant node (<67>), file from Base_asr.tre from CAFÉ5 outputs. The compatible input file for the eggNOG must contain the protein sequences, Orthogroup_Sequences directory from Orthofinder provides FASTA files for each gene family, and they were converted from DNA sequences to protein sequences by [cafe.sh](cafe.sh). Then [emapper.py](emapper.py) was employed to obtain the gene ontology results. 
 
