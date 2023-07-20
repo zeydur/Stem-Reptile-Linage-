@@ -2,7 +2,7 @@
 from Bio import SeqIO
 from Bio.Seq import Seq
 
-# Define input and output file paths
+# Define input and output file paths (Example only for OG0000849 gene family)
 input_file = '/gpfs01/home/mbxzd1/testfinal/OrthoFinder/Results_Jun28/Orthogroup_Sequences/OG0000849.fa'
 output_file = '/gpfs01/home/mbxzd1/testfinal/OrthoFinder/Results_Jun28/Orthogroup_Sequences/OG0000849_protein.fa'
 
