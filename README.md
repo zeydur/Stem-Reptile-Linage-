@@ -74,6 +74,13 @@ Move the directory to the Orthofinder/Gene_Duplication_Events, then
 
 ``grep -o $'\tNon-Terminal\t' Duplications.tsv | wc -l``
 
+*To count significant families at the p=0.05 threshold:
+
+````
+grep -c "\y" Base_family_results.txt = 1307
+grep "y" Base_family_results.txt > Significant_families.txt
+````
+
 ### 4. Divergence Time Estimation
 The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, TimeTree facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using iTOL v.6 (Interactive Tree Of Life) software and FigTree v.1.4.4 software.
 
