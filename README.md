@@ -77,7 +77,7 @@ Move the directory to the Orthofinder/Gene_Duplication_Events, then
 *To count significant families at the p=0.05 threshold:
 
 ````
-grep -c "\y" Base_family_results.txt = 1307
+grep -c "\y" Base_family_results.txt = 1306
 grep "y" Base_family_results.txt > Significant_families.txt
 ````
 
