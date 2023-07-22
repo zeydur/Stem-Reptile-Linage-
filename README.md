@@ -74,7 +74,7 @@ Move the directory to the Orthofinder/Gene_Duplication_Events, then
 
 ``grep -o $'\tNon-Terminal\t' Duplications.tsv | wc -l``
 
-*To count significant families at the p=0.05 threshold:
+* To count significant families at the p=0.05 threshold:
 
 ````
 grep -c "\y" Base_family_results.txt = 1306
@@ -89,7 +89,8 @@ The intricate web of phylogenetic relationships was illuminated by the comprehen
 [NewickTree](NewickTree)
 
 ### 5. Evolution of Gene Families
-CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the 145,520 orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. . In CAFE5, the default parameters for input and tree are designated as "--input" and "--tree," respectively. The input file, named Orthogroups.GeneCount.tsv, is generated through the use of OrthoFinder.  However, it is necessary to modify the Orthogroups.GeneCount.tsv file to be compatible with CAFE5. This modification involves converting the file to tab-separated format and removing the total gene count column before it can be processed by CAFE5. Furthermore, the tree in Newick format, is obtained directly from the preceding step of the methodology.
+CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the 145,520 orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. . In CAFE5, the default parameters for input and tree are designated as "--input" and "--tree," respectively. The input file, named Orthogroups.GeneCount.tsv, is generated through the use of OrthoFinder.  However, it is necessary to modify the Orthogroups.GeneCount.tsv file to be compatible with CAFE5. This modification involves converting the file to tab-separated format and removing the total gene count column before it can be processed by CAFE5. Furthermore, the tree in Newick format, is obtained directly from the preceding step of the methodology. The final likelihood and birth-death parameter (λ) were employed to investigate the gain-loss of gene probabilities through the tree, and furthermore different P-values (0.05, 0.01) were utilized to investigate the significance of expansions and contractions.
+In order to visualize, summary of significant gene family expansions and contractions CafePlotter which requires 3.8 or higher versions of Python was utilized, and species trees were obtained. 
 
 #### 5.1. Preparing the files for CAFE5 analysis
 
@@ -150,7 +151,7 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 ### 6. Gene Ontology Analysis
 
-EggNOG Mapper v2.1.9 (Carlos P. Cantalapiedra et al., 2021) was employed to identify or classify the gene of interest in manner of their functions, locations and processes that are playing role. This analysis employs the significant gene families which were obtained from CAFÉ5 analysis, here we have focused on only eight gene families, by searching the significant expansions and contractions on the Reptilian branch by determining the relevant node (<67>), file from Base_asr.tre from CAFÉ5 outputs. The compatible input file for the eggNOG must contain the protein sequences, Orthogroup_Sequences directory from Orthofinder provides FASTA files for each gene family, and they were converted from DNA sequences to protein sequences by [translate_fasta.py](translate_fasta.py). Then [eggnogOG24.sh](eggnogOG24.sh) was employed to obtain the gene ontology results. 
+EggNOG Mapper v2.1.9 (Carlos P. Cantalapiedra et al., 2021) was employed to identify or classify the gene of interest in manner of their functions, locations and processes that are playing role. This analysis employs the significant gene families which were obtained from CAFÉ5 analysis, here we have focused on only eight gene families, by searching the significant expansions and contractions on the Reptilian branch by determining the relevant node (<67>), file from Base_asr.tre from CAFÉ5 outputs. The compatible input file for the eggNOG must contain the protein sequences, Orthogroup_Sequences directory from Orthofinder provides FASTA files for each gene family, and they were converted from DNA sequences to protein sequences by [translate_fasta.py](translate_fasta.py). Then [eggnogOG24.sh](eggnogOG24.sh) was employed to obtain the gene ontology results which requires several default parameters as - -data-dir “eggnog_data” which provides EggNog database and - -dbtype “seqdb” which provides sequence database, both of which employed for orthology prediction and functional analysis. 
 
 * The run command for translation:
 
