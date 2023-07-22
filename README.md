@@ -21,14 +21,14 @@ conda install -c conda-forge -c bioconda busco=5.4.7 (if specific version is req
 ## Methods
 
 ### 1. Genome Collection
-The data used in this project was obtained through several sources including National Center for Biotechnology Information (NCBI) – Genome (regarding to the latest releases - 2023), Ensembl – Biomart (Ensembl Release 109, 2023) and Iguana consortium. Genome coding sequences of reference genomes as in FASTA format files were downloaded from NCBI-Genome and only coding sequences were downloaded from Ensembl-Biomart, then the files were modified by addition of the common names to the headers. The Iguana genomes were directly derived from Iguana Consortium, and they have performed BRAKER v.2.1.6 for prediction of protein coding gene structures in cooperation with TSEBRA (Gabriel, L., Hoff, K.J., Brůna, T. et al., 2021) to predict the structures and generate the coding sequences, furthermore similar modifications were applied to those data files. In total 37 genomes from different classes were obtained (24 species from reptilia, 6 mammalia, 3 amphibia, 4 aves).
+The data used in this project was obtained through several sources including ``National Center for Biotechnology Information`` (NCBI) – Genome (regarding to the latest releases - 2023), ``Ensembl – Biomart`` (Ensembl Release 109, 2023) and ``Iguana consortium``. Genome coding sequences of reference genomes as in FASTA format files were downloaded from NCBI-Genome and only coding sequences were downloaded from Ensembl-Biomart, then the files were modified by addition of the common names to the headers. The Iguana genomes were directly derived from Iguana Consortium, and they have performed ``BRAKER`` v.2.1.6 for prediction of protein coding gene structures in cooperation with ``TSEBRA`` (Gabriel, L., Hoff, K.J., Brůna, T. et al., 2021) to predict the structures and generate the coding sequences, furthermore similar modifications were applied to those data files. In total 37 genomes from different classes were obtained (24 species from reptilia, 6 mammalia, 3 amphibia, 4 aves).
 
 * The example command for modification of FASTA files:
 
 ``sed "s/^>/>Chinesesoftshellturtle_/" Softshellturt/ncbi_dataset/data/GCF_000230535.1/cds_from_genomic.fna > ChineseSoftshellTurtle.fa``
 
 ### 2. Investigation of Completeness as Quality Control for Genome Assemblies
-To assess genome annotation completeness, BUSCO v5.4.7 (et al.) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, ``--input`` was set as ``FASTA files`` from genome collection step, ``--lineage`` was set as ``vertebrata_odb10`` and ``--mode`` was set as ``genome`` on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ``‘vertebrata_odb10’`` was employed and the dependencies were identified for the research as HMMsearch v3.1. and bbtools v39.01.
+To assess genome annotation completeness, ``BUSCO`` v5.4.7 (et al.) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, ``--input`` was set as ``FASTA files`` from genome collection step, ``--lineage`` was set as ``vertebrata_odb10`` and ``--mode`` was set as ``genome`` on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ``‘vertebrata_odb10’`` was employed and the dependencies were identified for the research as ``HMMsearch`` v3.1. (Eddy S.R. ,2011) and ``bbtools`` v39.01 (Bushnell B., 2021).
 
 - The script used:
 
@@ -54,7 +54,7 @@ For that purpose HPC-Tomoko which has already had R package was employed since s
 
 
 ### 3. Orthology and Gene Family Inference
-The main goals of usage of OrthoFinder (version) are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by DIAMOND (version) which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
+The main goals of usage of ``OrthoFinder`` (version 2.5.5) (Emms D. M. et al., 2019)  are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by ``DIAMOND`` (2.1.7) (Buchfink B. et al., 2015)  which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
 
 * The script used:
 
@@ -82,15 +82,15 @@ grep "y" Base_family_results.txt > Significant_families.txt
 ````
 
 ### 4. Divergence Time Estimation
-The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, TimeTree facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using iTOL v.6 (Interactive Tree Of Life) software and FigTree v.1.4.4 software.
+The intricate web of phylogenetic relationships was illuminated by the comprehensive timetree formulated in the seminal study led by [James R., Portik D. M., Zheng Y., Thomson R. C. et al.]. Employing sophisticated molecular dating methods, ``TimeTree`` facilitated the determination of divergence times between nodes, carefully considering the adjusted median times as crucial benchmarks. The species tree, incorporating divergence times, was visually represented using ``iTOL v.6`` (Interactive Tree Of Life) software and ``FigTree v.1.4.4`` software.
 
 * You can find the ultrameric, Newick tree:
 
 [NewickTree](NewickTree)
 
 ### 5. Evolution of Gene Families
-CAFÉ v.5 was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the 145,520 orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. . In CAFE5, the default parameters for input and tree are designated as "--input" and "--tree," respectively. The input file, named Orthogroups.GeneCount.tsv, is generated through the use of OrthoFinder.  However, it is necessary to modify the Orthogroups.GeneCount.tsv file to be compatible with CAFE5. This modification involves converting the file to tab-separated format and removing the total gene count column before it can be processed by CAFE5. Furthermore, the tree in Newick format, is obtained directly from the preceding step of the methodology. The final likelihood and birth-death parameter (λ) were employed to investigate the gain-loss of gene probabilities through the tree, and furthermore different P-values (0.05, 0.01) were utilized to investigate the significance of expansions and contractions.
-In order to visualize, summary of significant gene family expansions and contractions CafePlotter which requires 3.8 or higher versions of Python was utilized, and species trees were obtained. 
+``CAFÉ`` v.5 (Fábio K. Mendes et al., 2020) was used for the purpose of detect the gene families exhibiting notable rapid expansions and contractions in gene copy numbers exclusively in tetrapoda lineage (the genomes table). This analysis encompassed the 145,520 orthologous groups accessible in Orthofinder. By leveraging the ultarmeric tree (based on the divergence times) and accounting the gene family copy numbers, CAFÉ5 initiates the estimation of the evolution of the gene families. . In CAFE5, the default parameters for input and tree are designated as ``"--input" and "--tree"`` respectively. The input file, named Orthogroups.GeneCount.tsv, is generated through the use of OrthoFinder.  However, it is necessary to modify the Orthogroups.GeneCount.tsv file to be compatible with CAFE5. This modification involves converting the file to tab-separated format and removing the total gene count column before it can be processed by CAFE5. Furthermore, the tree in Newick format, is obtained directly from the preceding step of the methodology. The final likelihood and birth-death parameter (λ) were employed to investigate the gain-loss of gene probabilities through the tree, and furthermore different P-values (0.05, 0.01) were utilized to investigate the significance of expansions and contractions.
+In order to visualize, summary of significant gene family expansions and contractions ``CafePlotter`` which requires 3.8 or higher versions of Python was utilized, and species trees were obtained. 
 
 #### 5.1. Preparing the files for CAFE5 analysis
 
@@ -137,7 +137,7 @@ or it can be run as in Bash script (which has been used):
 
 or 
 
-* The cafeplotter tool can be installed, directory can be created and regarding to the directory of the CAFE5 results the plot can be obtained by following commands:
+* The ``CafePlotter`` tool can be installed, directory can be created and regarding to the directory of the CAFE5 results the plot can be obtained by following commands:
 
 ````
 pip install cafeplotter
@@ -151,7 +151,7 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 ### 6. Gene Ontology Analysis
 
-EggNOG Mapper v2.1.9 (Carlos P. Cantalapiedra et al., 2021) was employed to identify or classify the gene of interest in manner of their functions, locations and processes that are playing role. This analysis employs the significant gene families which were obtained from CAFÉ5 analysis, here we have focused on only eight gene families, by searching the significant expansions and contractions on the Reptilian branch by determining the relevant node (<67>), file from Base_asr.tre from CAFÉ5 outputs. The compatible input file for the eggNOG must contain the protein sequences, Orthogroup_Sequences directory from Orthofinder provides FASTA files for each gene family, and they were converted from DNA sequences to protein sequences by [translate_fasta.py](translate_fasta.py). Then [eggnogOG24.sh](eggnogOG24.sh) was employed to obtain the gene ontology results which requires several default parameters as - -data-dir “eggnog_data” which provides EggNog database and - -dbtype “seqdb” which provides sequence database, both of which employed for orthology prediction and functional analysis. 
+``EggNOG Mapper`` v2.1.9 (Carlos P. Cantalapiedra et al., 2021) was employed to identify or classify the gene of interest in manner of their functions, locations and processes that are playing role. This analysis employs the significant gene families which were obtained from CAFÉ5 analysis, here we have focused on only eight gene families, by searching the significant expansions and contractions on the Reptilian branch by determining the relevant node (<67>), file from Base_asr.tre from CAFÉ5 outputs. The compatible input file for the eggNOG must contain the protein sequences, Orthogroup_Sequences directory from Orthofinder provides FASTA files for each gene family, and they were converted from DNA sequences to protein sequences by [translate_fasta.py](translate_fasta.py). Then [eggnogOG24.sh](eggnogOG24.sh) was employed to obtain the gene ontology results which requires several default parameters as ``- -data-dir “eggnog_data” which provides EggNog database and - -dbtype “seqdb”`` which provides sequence database, both of which employed for orthology prediction and functional analysis. 
 
 * The run command for translation:
 
