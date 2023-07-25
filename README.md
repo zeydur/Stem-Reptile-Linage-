@@ -159,7 +159,31 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 ### 7. GO Enrichment Analysis
 
+In order to investigate the overrepresented, underrepresented or enriched GO terms ``Goatools`` (Klopfenstein DV, et al., 2018) was utilized which is a specific Python package. Principle relies on files that are known as obo-formatted from Gene Ontology website (http://geneontology.org) and structure is considered as directed acyclic graph (DAG). To perform enrichment analysis, the python code find_enrichment.py had been run by taking important arguments: ``1) the file that contains gene IDs for 8 orthogroups which are relavent to our study``, ``2) the file that contains gene IDs for every orthogroups from OrthoFinder as background of the study`` and ``3) an association file which contains the GO terms and their gene IDs from EggNOG outputs``. For that purpose, different ``p-values`` can be employed to test the significance of enrichment (GO term concentration significantly higher compared to background) or purification (significantly lower). 
+
+* To obtain the Gene ID file:
+
+The example run command must be:
+
+``python3 [gene_ids.py](gene_ids.py)``
+
+* To obtain the Background file:
+
+The example run command must be:
+
+``[background.py](background.py)``
+
+* To obtain the Association file:
+
+The example run command must be:
+
+``[association.py](association.py)``
+
+* Then the gene ID files need to be modifed to get a compatible file for Goatools:
+
 ``sed 's/,/;/g' gene_association_eggnog359.txt > test_gene_association_eggnog359.txt``
+
+* The example run command for Goatools for one the orthogroup:
 
 ``python3 /gpfs01/home/mbxzd1/miniconda3/bin/find_enrichment.py --pval=0.05 --indent gene_ids359.txt background_geneszey.txt test_gene_association_eggnog359.txt --outfile=goea_results359.tsv --obo data/go-basic.obo``
 
