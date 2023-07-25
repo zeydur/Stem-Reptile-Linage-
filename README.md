@@ -165,19 +165,19 @@ In order to investigate the overrepresented, underrepresented or enriched GO ter
 
 The example run command must be:
 
-``python3 [gene_ids.py](gene_ids.py)``
+python3 [gene_ids.py](gene_ids.py)
 
 * To obtain the Background file:
 
 The example run command must be:
 
-``[background.py](background.py)``
+python3 [background.py](background.py)
 
 * To obtain the Association file:
 
 The example run command must be:
 
-``[association.py](association.py)``
+python3 [association.py](association.py)
 
 * Then the gene ID files need to be modifed to get a compatible file for Goatools:
 
