@@ -12,5 +12,8 @@
 source $HOME/.bash_profile
 conda activate orthofinder
 
+#Make a new directory
+mkdir /gpfs01/home/mbxzd1/testfinal/
+
 #After activation run the orthofinder with default parameters
 orthofinder -d -f /gpfs01/home/mbxzd1/testfinal/
