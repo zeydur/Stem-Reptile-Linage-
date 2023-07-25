@@ -157,3 +157,9 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 ``python3 translate_fasta.py``
 
+### 7. GO Enrichment Analysis
+
+``sed 's/,/;/g' gene_association_eggnog359.txt > test_gene_association_eggnog359.txt``
+
+``python3 /gpfs01/home/mbxzd1/miniconda3/bin/find_enrichment.py --pval=0.05 --indent gene_ids359.txt background_geneszey.txt test_gene_association_eggnog359.txt --outfile=goea_results359.tsv --obo data/go-basic.obo``
+
