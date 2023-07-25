@@ -155,7 +155,7 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 * The run command for translation:
 
-``python3 translate_fasta.py``
+python3 [translate_fasta.py](translate_fasta.py)
 
 ### 7. GO Enrichment Analysis
 
