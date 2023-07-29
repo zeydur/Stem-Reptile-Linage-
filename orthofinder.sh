@@ -12,7 +12,7 @@
 source $HOME/.bash_profile
 conda activate orthofinder
 
-#Make a new directory
+#Make a new directory and all Fasta files were copied to this direction
 mkdir /gpfs01/home/mbxzd1/testfinal/
 
 #After activation run the orthofinder with default parameters
