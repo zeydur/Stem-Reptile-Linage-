@@ -163,7 +163,7 @@ python3 [translate_fasta.py](translate_fasta.py)
 
 * To perform EggeNOG analysis:
 
-sbatch [translate_fasta.py](translate_fasta.py)
+sbatch [eggnogOG24.sh](eggnogOG24.sh)
 
 ### 7. GO Enrichment Analysis
 
