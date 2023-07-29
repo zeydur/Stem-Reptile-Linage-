@@ -7,7 +7,7 @@ The scripts were created in the Miniconda3 environment, requiring prior installa
 A separate environment was created for each tool, and the following example shows the command used for running each tool:
 
 ````
-conda create --prefix /directory/ busco
+conda create --prefix /directory/busco
 
 conda activate /directory/busco
 
