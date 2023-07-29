@@ -28,7 +28,7 @@ The data used in this project was obtained through several sources including ``N
 ``sed "s/^>/>Chinesesoftshellturtle_/" Softshellturt/ncbi_dataset/data/GCF_000230535.1/cds_from_genomic.fna > ChineseSoftshellTurtle.fa``
 
 ### 2. Investigation of Completeness as Quality Control for Genome Assemblies
-To assess genome annotation completeness, ``BUSCO`` v5.4.7 (et al.) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, ``--input`` was set as ``FASTA files`` from genome collection step, ``--lineage`` was set as ``vertebrata_odb10`` and ``--mode`` was set as ``genome`` on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ``‘vertebrata_odb10’`` was employed and the dependencies were identified for the research as ``HMMsearch`` v3.1. (Eddy S.R. ,2011) and ``bbtools`` v39.01 (Bushnell B., 2021).
+To assess genome annotation completeness, ``BUSCO`` v5.4.7 (Manni, M. et al., 2021) software was employed by quantifying the proportions of complete, fragmented and missing from gene sets derived from last step with default parameters. For mandatory arguments, ``--input`` was set as ``FASTA files`` from genome collection step, ``--lineage`` was set as ``vertebrata_odb10`` and ``--mode`` was set as ``genome`` on each GenBank, Ensembl and Iguana consortium assembly. 3354 BUSCOs from the ``‘vertebrata_odb10’`` was employed and the dependencies were identified for the research as ``HMMsearch`` v3.1. (Eddy S.R. ,2011) and ``bbtools`` v39.01 (Bushnell B., 2021).
 
 - The script used:
 
