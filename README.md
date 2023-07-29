@@ -54,7 +54,7 @@ For that purpose HPC-Tomoko which has already had R package was employed since s
 
 * The image of the graph:
 
-[busco.sh](busco.sh)
+[busco_figure.png](busco_figure.png)
 
 
 ### 3. Orthology and Gene Family Inference
