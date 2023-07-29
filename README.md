@@ -52,6 +52,10 @@ For that purpose HPC-Tomoko which has already had R package was employed since s
 
 ``python3 generate_plot.py --working_directory /home/mbxzd1/busco_summaries``
 
+* The image of the graph:
+
+[busco.sh](busco.sh)
+
 
 ### 3. Orthology and Gene Family Inference
 The main goals of usage of ``OrthoFinder`` (version 2.5.5) (Emms D. M. et al., 2019)  are identification orthologs, orthogroups and duplicated genes; construction of gene families accross mutlitple species. Therefore, initial step as sequence alignment was performed by ``DIAMOND`` (2.1.7) (Buchfink B. et al., 2015)  which was the perquisite for OrthoFinder analysis. Then, phylogenetical analysis was conducted to investigate relationships between orthogroups based on the gene families. For those projections, FASTA files from first step was employed as an input file. 
