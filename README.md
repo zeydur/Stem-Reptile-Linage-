@@ -129,7 +129,7 @@ or it can be run as in Bash script (which has been used):
 
 #### 5.2. Visualization of the outcomes from CAFE5 analysis
 
-* To visualize the outcomes of the CAFE analysis following script had run:
+* To visualize the outcomes of the CAFE analysis following script had run (taken from https://github.com/hahnlab/CAFE5/):
 
 [cafe_draw_tree.py](cafe_draw_tree.py)
 
