@@ -161,6 +161,10 @@ cafeplotter -i RESULTS_CAFE/ -o cafeplot/
 
 python3 [translate_fasta.py](translate_fasta.py)
 
+* To perform EggeNOG analysis:
+
+sbatch [translate_fasta.py](translate_fasta.py)
+
 ### 7. GO Enrichment Analysis
 
 In order to investigate the overrepresented, underrepresented or enriched GO terms ``Goatools`` (Klopfenstein DV, et al., 2018) was utilized which is a specific Python package. Principle relies on files that are known as obo-formatted from Gene Ontology website (http://geneontology.org) and structure is considered as directed acyclic graph (DAG). To perform enrichment analysis, the python code find_enrichment.py had been run by taking important arguments: ``1) the file that contains gene IDs for 8 orthogroups which are relavent to our study``, ``2) the file that contains gene IDs for every orthogroups from OrthoFinder as background of the study`` and ``3) an association file which contains the GO terms and their gene IDs from EggNOG outputs``. For that purpose, different ``p-values`` can be employed to test the significance of enrichment (GO term concentration significantly higher compared to background) or purification (significantly lower). 
