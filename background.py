@@ -9,7 +9,7 @@ def extract_gene_ids_from_fasta(fasta_file):
     return gene_ids
 
 # Replace "single_copy_orthrogrup.fasta" with the actual path to your FASTA file
-fasta_file = "/gpfs01/home/mbxzd1/testfinal/OrthoFinder/Results_Jun28/Single_Copy_Orthologue_Sequences/OG0011533.fa"
+fasta_file = "/gpfs01/home/mbxzd1/testfinal/OrthoFinder/Results_Jun28/Orthogroup_Sequences/"
 
 # Extract gene IDs from the FASTA file
 gene_ids = extract_gene_ids_from_fasta(fasta_file)
